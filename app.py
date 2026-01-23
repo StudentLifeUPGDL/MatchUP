@@ -54,24 +54,24 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-
+Marca temporal	Nombre Completo Ella	ID ELLA	Nombre Completo EL	ID EL
 # --- CONFIGURACIÓN DE COLUMNAS DE GOOGLE SHEETS ---
 # IMPORTANTE: Cambia estos textos EXACTAMENTE por como aparecen en la fila 1 de tu Excel
-COL_ID_1 = "ID de la Primera Persona (El Candidato A)"
-COL_NOMBRE_1 = "Nombre Completo de la Persona A"
-COL_ID_2 = "ID de la Segunda Persona (El Candidato B)"
-COL_NOMBRE_2 = "Nombre Completo de la Persona B"
-COL_RAZON = "¿Cuál es tu teoría de por qué harían buena pareja? (La Tesis)"
+COL_ID_1 = "ID Ella"
+COL_NOMBRE_1 = "Nombre Ella"
+COL_ID_2 = "ID El"
+COL_NOMBRE_2 = "Nombre El"
+COL_RAZON = "Porque harian buena pareja?"
 
 # --- URL DE TU GOOGLE FORM ---
-URL_FORMULARIO = "PON_AQUI_EL_LINK_DE_TU_GOOGLE_FORM"
+URL_FORMULARIO = "https://forms.gle/o3kp4N79xSL1bn6E6"
 
 # --- FUNCIONES ---
 
 def cargar_datos():
     """Conecta con Google Sheets y descarga los datos"""
     conn = st.connection("gsheets", type=GSheetsConnection)
-    # ttl=60 hace que se actualice cada minuto para no saturar la API
+    # ttl=600 hace que se actualice cada minuto para no saturar la API
     return conn.read(worksheet="Respuestas de formulario 1", ttl=60)
 
 def procesar_ranking(df):
