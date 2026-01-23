@@ -71,8 +71,8 @@ URL_FORMULARIO = "https://forms.gle/o3kp4N79xSL1bn6E6"
 def cargar_datos():
     """Conecta con Google Sheets y descarga los datos"""
     conn = st.connection("gsheets", type=GSheetsConnection)
-    # ttl=60 hace que se actualice cada minuto para no saturar la API
-    return conn.read(worksheet="Respuestas", ttl=60)
+    # ttl=3600 hace que se actualice cada minuto para no saturar la API
+    return conn.read(worksheet="Respuestas", ttl=3600)
 
 def procesar_ranking(df):
     """Lógica para contar votos normalizando parejas (A+B = B+A)"""
