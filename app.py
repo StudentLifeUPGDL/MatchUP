@@ -54,7 +54,7 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-Marca temporal	Nombre Completo Ella	ID ELLA	Nombre Completo EL	ID EL
+
 # --- CONFIGURACIÓN DE COLUMNAS DE GOOGLE SHEETS ---
 # IMPORTANTE: Cambia estos textos EXACTAMENTE por como aparecen en la fila 1 de tu Excel
 COL_ID_1 = "ID Ella"
