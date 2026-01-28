@@ -5,7 +5,7 @@ import time
 
 # --- CONFIGURACIÓN DE LA PÁGINA ---
 st.set_page_config(
-    page_title="Matchmaking San Valentín UP",
+    page_title="Match UP San Valentín",
     page_icon="💘",
     layout="centered"
 )
@@ -117,12 +117,12 @@ def procesar_ranking(df):
 
 # --- INTERFAZ PRINCIPAL ---
 
-st.title("💘 Matchmaking UP 💘")
+st.title("💘 Match UP 💘")
 st.markdown("### ¿Quiénes se ganarán la cena romántica?")
 st.write("Vota por tus amigos (o por ti mismo/a) y ayuda a Cupido a hacer su trabajo.")
 
 # Botón grande para ir al formulario
-st.link_button("👉 ¡VOTAR POR UNA PAREJA AHORA! 👈", URL_FORMULARIO, use_container_width=True)
+st.link_button(" ¡VOTA POR UNA PAREJA AHORA! ", URL_FORMULARIO, use_container_width=True)
 
 st.divider()
 
@@ -147,13 +147,13 @@ try:
         st.markdown(f"<div style='text-align: center; color: #D32F2F; font-size: 1.2em; margin-bottom: 20px;'>👑 <b>{pareja_top}</b> 👑</div>", unsafe_allow_html=True)
 
         # --- RANKING TABLE ---
-        st.subheader("🔥 El Top 10 más pedido")
+        st.subheader("🔥 El Top 10 más pedido del ultimo dia")
         
         # Configuramos la tabla para que se vea bonita con barras de progreso
         st.dataframe(
             ranking[['Pareja', 'Votos']].head(10),
             column_config={
-                "Pareja": st.column_config.TextColumn("Tortolitos", width="medium"),
+                "Pareja": st.column_config.TextColumn("Pareja", width="medium"),
                 "Votos": st.column_config.ProgressColumn(
                     "Popularidad",
                     format="%d ❤️",
@@ -186,4 +186,4 @@ except Exception as e:
     st.info("Verifica que el archivo secrets.toml esté bien configurado.")
 
 st.markdown("---")
-st.caption("Hecho con ❤️ para San Valentín UP.")
+st.caption("Hecho con ❤️ para San Valentín. Student Life & SAUP")
